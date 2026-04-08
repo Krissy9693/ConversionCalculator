@@ -65,6 +65,7 @@ let latestReport = "";
 let latestWeakestStage = null;
 let latestExpandedReportData = null;
 const REPORT_STORAGE_KEY = "microConversionExpandedReport";
+const EMAIL_STORAGE_KEY = "microConversionEmail";
 
 const improvementLibrary = {
   lead_to_call: {
@@ -382,6 +383,7 @@ function saveExpandedReportData() {
   }
 
   window.localStorage.setItem(REPORT_STORAGE_KEY, JSON.stringify(latestExpandedReportData));
+  window.localStorage.setItem(EMAIL_STORAGE_KEY, emailInput.value.trim());
 }
 
 function updateResults() {

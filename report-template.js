@@ -1,5 +1,6 @@
 (function () {
   const STORAGE_KEY = "microConversionExpandedReport";
+  const EMAIL_STORAGE_KEY = "microConversionEmail";
 
   function escapeHtml(value) {
     return String(value)
@@ -31,6 +32,30 @@
 
   function renderEmptyState() {
     document.querySelector("#report-subtitle").textContent = "Open this page after generating results inside the calculator.";
+  }
+
+  function createEmailDraft(reportData) {
+    const recipient = window.localStorage.getItem(EMAIL_STORAGE_KEY) || "";
+    const subject = encodeURIComponent("Expanded Funnel Report");
+    const body = encodeURIComponent([
+      "Here is your expanded funnel report from Kristen Lopez Consulting.",
+      "",
+      reportData.snapshot.headline,
+      reportData.snapshot.rateLine,
+      "",
+      `Priority Focus: ${reportData.priorityFocus.title}`,
+      reportData.priorityFocus.summary,
+      "",
+      "Next Quarter Targets:",
+      ...reportData.forecast.map((item) => `${item.title}: ${item.value}${item.note ? ` (${item.note})` : ""}`),
+      "",
+      "Book your strategy call:",
+      "https://calendar.app.google/zzBbuVEscKuxoPaXA",
+    ].join("\n"));
+
+    window.location.href = recipient
+      ? `mailto:${encodeURIComponent(recipient)}?subject=${subject}&body=${body}`
+      : `mailto:?subject=${subject}&body=${body}`;
   }
 
   function renderMetricCards(container, items) {
@@ -91,4 +116,14 @@
   }
 
   renderReport(reportData);
+  const previewButton = document.querySelector("#preview-report-button");
+  if (previewButton) {
+    previewButton.addEventListener("click", () => {
+      window.location.reload();
+    });
+  }
+  const emailButton = document.querySelector("#email-report-button");
+  if (emailButton) {
+    emailButton.addEventListener("click", () => createEmailDraft(reportData));
+  }
 })();
