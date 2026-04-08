@@ -1,0 +1,242 @@
+:root {
+  --bg: #f6ede4;
+  --card: #fffaf6;
+  --soft: #f8e7d8;
+  --soft-2: #f3dcc8;
+  --text: #221d19;
+  --muted: #6a5a4e;
+  --line: rgba(70, 44, 28, 0.12);
+  --brand: #b35626;
+  --brand-dark: #87411c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f4e6d8 0%, var(--bg) 100%);
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+}
+
+.report-shell {
+  padding: 32px 18px;
+}
+
+.report-card {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: 28px;
+  background: rgba(255, 250, 246, 0.92);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 24px 80px rgba(92, 53, 25, 0.14);
+}
+
+.eyebrow,
+.section-label,
+.card-label,
+.chip-label {
+  margin: 0 0 10px;
+  color: var(--brand-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+h1, h2, h3, h4, p { margin-top: 0; }
+
+h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.report-subtitle,
+.section-copy,
+.body-copy p,
+.report-row-note,
+.snapshot-support {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.report-header {
+  margin-bottom: 32px;
+}
+
+.report-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 20px;
+  padding: 26px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--soft) 0%, var(--soft-2) 100%);
+  border: 1px solid rgba(179, 86, 38, 0.18);
+}
+
+.snapshot-rate {
+  margin-bottom: 14px;
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.hero-chip {
+  align-self: start;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.58);
+  border: 1px solid rgba(70, 44, 28, 0.08);
+}
+
+.chip-value {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.report-section {
+  margin-top: 22px;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.report-section.spotlight {
+  background: linear-gradient(180deg, rgba(248, 231, 216, 0.55) 0%, rgba(255, 250, 246, 0.98) 100%);
+}
+
+.totals-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.metric-card,
+.report-row,
+.tip-card,
+.diagnosis-card {
+  border-radius: 18px;
+  background: rgba(31, 27, 24, 0.03);
+  border: 1px solid rgba(70, 44, 28, 0.08);
+}
+
+.metric-card {
+  padding: 16px;
+}
+
+.metric-label {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.metric-value {
+  margin: 0;
+  font-size: 1.7rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.stack-list {
+  display: grid;
+  gap: 12px;
+}
+
+.report-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.report-row-title {
+  margin: 0 0 4px;
+  font-weight: 800;
+}
+
+.report-row-value {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.diagnosis-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.diagnosis-card {
+  padding: 18px;
+}
+
+.body-copy,
+.tip-list {
+  display: grid;
+  gap: 12px;
+}
+
+.tip-card {
+  padding: 14px 16px;
+}
+
+.tip-card h4 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.tip-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cta-section {
+  text-align: left;
+  background: linear-gradient(135deg, rgba(248, 231, 216, 0.7) 0%, rgba(255, 250, 246, 0.98) 100%);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .report-card { padding: 20px; }
+  .report-hero,
+  .diagnosis-grid { grid-template-columns: 1fr; }
+}

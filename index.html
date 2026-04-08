@@ -11,17 +11,11 @@
 </head>
 <body>
   <main class="widget-shell">
-    <section class="calculator-card" aria-labelledby="widget-title">
-      <div class="hero">
+    <section class="calculator-card">
+      <div class="hero" id="hero">
         <p class="eyebrow">Quarterly Micro Conversion Calculator</p>
         <h1 id="widget-title">Stop Guessing. Start Converting.</h1>
-        <div class="intro" id="hero-copy">
-          <p>First, build your funnel the way it actually works today.</p>
-          <p>Choose the stages that match your process from first contact to signed agreement.</p>
-          <p>Then, enter your numbers from the last three months.</p>
-          <p>This allows us to calculate your conversion rates at each step, not just the end result.</p>
-          <p>Once complete, you will see where your opportunities are, where deals are falling off, and exactly what needs to improve to reach your next quarter goals.</p>
-        </div>
+        <div class="intro" id="hero-copy"></div>
       </div>
 
       <section class="step-panel" id="process-step">
@@ -30,9 +24,7 @@
           <h2>Select Your Sales Process</h2>
           <p>Pick the stages that match your funnel in the order they happen.</p>
         </div>
-
-        <div class="stage-picker" id="stage-picker" aria-label="Sales process options"></div>
-
+        <div class="stage-picker" id="stage-picker"></div>
         <div class="actions">
           <button class="primary-button" id="continue-button" type="button">Continue To Monthly Data</button>
         </div>
@@ -42,7 +34,7 @@
         <div class="section-heading">
           <p class="step-tag">Step Two of Three</p>
           <h2>Enter Your Last 3 Months</h2>
-          <div class="step-copy" id="data-step-copy">
+          <div class="step-copy">
             <p>This is where most people realize what is actually happening in their funnel.</p>
             <p>Add your numbers for each stage across the last three months.</p>
             <p>We are measuring movement, not just outcomes.</p>
@@ -52,7 +44,7 @@
 
         <div class="summary-bar">
           <div>
-            <p class="summary-label">Selected process</p>
+            <p class="summary-label">Selected Process</p>
             <p class="summary-process" id="selected-process"></p>
           </div>
           <div class="actions">
@@ -69,14 +61,14 @@
 
       <section class="step-panel hidden" id="results-step">
         <div class="section-heading">
-          <p class="step-tag">Step Three of Three</p>
+          <p class="step-tag">Step Three of Four</p>
           <h2>Your Funnel, Broken Down Clearly</h2>
           <p>Start with your quarterly snapshot to see what your funnel is currently producing. Then set your next quarter goals and use the breakdown below to understand exactly what needs to happen at each stage to hit them.</p>
         </div>
 
         <div class="summary-bar">
           <div>
-            <p class="summary-label">Selected process</p>
+            <p class="summary-label">Selected Process</p>
             <p class="summary-process" id="selected-process-results"></p>
           </div>
           <div class="actions">
@@ -87,26 +79,23 @@
 
         <section class="hero-snapshot">
           <p class="snapshot-kicker">Quarterly Snapshot</p>
-          <h3 class="snapshot-headline" id="summary-headline">0 signed from 0 leads</h3>
-          <p class="snapshot-percent" id="summary-percent">0.0%</p>
-          <p class="snapshot-copy" id="summary-copy">
-            This is your current output. Now we break down each stage to understand what is driving it and what needs to change to impact your next quarter.
-          </p>
+          <h3 class="snapshot-headline" id="summary-headline">0 Agreements Signed From 0 New Leads</h3>
+          <p class="snapshot-percent" id="summary-percent">0.0% Total Conversion Rate</p>
+          <p class="snapshot-copy" id="summary-copy">This is your current output. Now we break down each stage to understand what is driving it and what needs to change to impact your next quarter.</p>
           <p class="warning-copy" id="warning-copy" hidden></p>
         </section>
 
         <div class="results-accordion">
           <details class="accordion-card" open>
-            <summary>Core results</summary>
+            <summary>Core Results</summary>
             <div class="accordion-body core-grid">
               <div class="result-card feature">
-                <p class="result-label" id="quarter-total-label">Quarterly total</p>
+                <p class="result-label" id="quarter-total-label">Quarterly Total Agreements Signed</p>
                 <p class="result-value" id="quarter-total">0</p>
-                <p class="result-note" id="quarter-total-note">Total final-stage entries across all 3 months</p>
+                <p class="result-note" id="quarter-total-note">Total agreements signed across all 3 months</p>
               </div>
-
               <div class="result-card">
-                <p class="result-label">Average monthly final stage</p>
+                <p class="result-label">Average Monthly Agreements Signed</p>
                 <p class="result-value" id="monthly-average">0.0</p>
                 <p class="result-note">Quarter total divided by 3 months</p>
               </div>
@@ -114,7 +103,7 @@
           </details>
 
           <details class="accordion-card" open>
-            <summary>Average micro conversions</summary>
+            <summary>Average Micro Conversions</summary>
             <div class="accordion-body">
               <div class="conversion-list" id="conversion-list"></div>
             </div>
@@ -125,27 +114,70 @@
             <div class="accordion-body">
               <label class="field">
                 <span id="goal-label">Target Agreements Signed for Next Quarter</span>
-                <input id="goal-input" type="number" min="0" step="1" inputmode="numeric" value="0">
+                <input id="goal-input" type="number" min="0" step="1" value="0">
               </label>
-              <p class="result-note" id="forecast-note">
-                Enter your target and we will map out exactly what your funnel needs to produce at each stage to hit it.
-              </p>
+              <p class="result-note" id="forecast-note">Enter your target and we will map out exactly what your funnel needs to produce at each stage to hit it.</p>
               <div class="conversion-list" id="forecast-list"></div>
             </div>
           </details>
 
-          <details class="accordion-card">
-            <summary>Email this report</summary>
+        </div>
+
+        <div class="actions data-actions">
+          <button class="primary-button" id="show-improvements-button" type="button">Show My Improvement Plan</button>
+        </div>
+      </section>
+
+      <section class="step-panel hidden" id="improvement-step">
+        <div class="section-heading">
+          <p class="step-tag">Step Four of Four</p>
+          <h2>Where To Improve First</h2>
+          <p>We looked at your lowest micro conversion and turned it into a practical focus area so you know where to direct your effort next.</p>
+        </div>
+
+        <div class="summary-bar">
+          <div>
+            <p class="summary-label">Priority Focus</p>
+            <p class="summary-process" id="improvement-stage-name"></p>
+          </div>
+          <div class="actions">
+            <button class="secondary-button" id="back-to-results-button" type="button">Back To Results</button>
+            <button class="secondary-button" id="back-to-data-from-improvement-button" type="button">Edit Monthly Data</button>
+          </div>
+        </div>
+
+        <section class="hero-snapshot">
+          <p class="snapshot-kicker">Lowest Micro Conversion</p>
+          <h3 class="snapshot-headline" id="improvement-rate">0.0%</h3>
+          <p class="snapshot-copy" id="improvement-summary">Your weakest conversion step will appear here.</p>
+        </section>
+
+        <div class="results-accordion">
+          <details class="accordion-card" open>
+            <summary>What This Tells Us</summary>
             <div class="accordion-body">
+              <div class="insight-copy" id="improvement-diagnosis"></div>
+            </div>
+          </details>
+
+          <details class="accordion-card planner-card" open>
+            <summary>5 Ways To Improve This Stage</summary>
+            <div class="accordion-body">
+              <div class="tips-list" id="improvement-tips"></div>
+            </div>
+          </details>
+
+          <details class="accordion-card" open>
+            <summary>Email Me My Expanded Report</summary>
+            <div class="accordion-body">
+              <p class="summary-copy">Receive an expanded report in your email with your quarterly snapshot, weakest micro conversion, and the next steps to improve it.</p>
               <label class="field">
-                <span>Email address</span>
-                <input id="email-input" type="email" inputmode="email" placeholder="name@example.com">
+                <span>Email Address</span>
+                <input id="email-input" type="email" placeholder="name@example.com">
               </label>
-              <p class="summary-copy" id="report-copy">
-                Generate an email draft with this quarter's results and your next-quarter KPI targets.
-              </p>
               <div class="actions">
-                <button class="primary-button" id="email-report-button" type="button">Create Email Draft</button>
+                <button class="secondary-button" id="preview-report-button" type="button">Preview Expanded Report</button>
+                <button class="primary-button" id="email-report-button" type="button">Email Me My Results</button>
               </div>
             </div>
           </details>

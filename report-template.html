@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expanded Funnel Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./report-template.css">
+</head>
+<body>
+  <main class="report-shell">
+    <section class="report-card">
+      <header class="report-header">
+        <p class="eyebrow">Kristen Lopez Consulting</p>
+        <h1>Expanded Funnel Report</h1>
+        <p class="report-subtitle" id="report-subtitle">A custom report built from your last 3 months of funnel data.</p>
+      </header>
+
+      <section class="report-hero">
+        <div>
+          <p class="section-label">Quarterly Snapshot</p>
+          <h2 id="snapshot-headline">0 Agreements Signed From 0 New Leads</h2>
+          <p class="snapshot-rate" id="snapshot-rate">0.0% Total Conversion Rate</p>
+          <p class="snapshot-support" id="snapshot-support">This report breaks down what your funnel is currently producing and what needs to change next.</p>
+        </div>
+        <div class="hero-chip">
+          <p class="chip-label">Priority Focus</p>
+          <p class="chip-value" id="priority-focus">No data yet</p>
+        </div>
+      </section>
+
+      <section class="report-section">
+        <div class="section-heading">
+          <p class="section-label">Current Funnel</p>
+          <h3>Your Numbers At A Glance</h3>
+        </div>
+        <div class="totals-grid" id="totals-grid"></div>
+      </section>
+
+      <section class="report-section">
+        <div class="section-heading">
+          <p class="section-label">Micro Conversions</p>
+          <h3>How Each Stage Is Performing</h3>
+        </div>
+        <div class="stack-list" id="conversion-list"></div>
+      </section>
+
+      <section class="report-section spotlight">
+        <div class="section-heading">
+          <p class="section-label">Biggest Opportunity</p>
+          <h3 id="weakest-stage-title">Weakest Stage</h3>
+          <p class="section-copy" id="weakest-stage-summary">Your weakest micro conversion will appear here.</p>
+        </div>
+        <div class="diagnosis-grid">
+          <div class="diagnosis-card">
+            <p class="card-label">What This Tells Us</p>
+            <div class="body-copy" id="diagnosis-copy"></div>
+          </div>
+          <div class="diagnosis-card">
+            <p class="card-label">5 Ways To Improve</p>
+            <div class="tip-list" id="tips-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="report-section">
+        <div class="section-heading">
+          <p class="section-label">90 Day Plan</p>
+          <h3>Your Next Quarter Targets</h3>
+          <p class="section-copy" id="goal-copy">Enter a target inside the calculator to see the next quarter plan here.</p>
+        </div>
+        <div class="stack-list" id="forecast-list"></div>
+      </section>
+
+      <section class="report-section cta-section">
+        <div class="section-heading">
+          <p class="section-label">Next Step</p>
+          <h3>Book Your Strategy Call</h3>
+          <p class="section-copy">If you want help improving the weakest point in your funnel, book a strategy call and we can walk through the next moves together.</p>
+        </div>
+        <a
+          class="cta-button"
+          href="https://calendar.app.google/zzBbuVEscKuxoPaXA"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Book Your Strategy Call
+        </a>
+      </section>
+    </section>
+  </main>
+
+  <script src="./report-template.js"></script>
+</body>
+</html>
